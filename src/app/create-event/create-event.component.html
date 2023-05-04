@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="event.title" name="title" placeholder="Title" required>
+    </div>
+    <div>
+        <label>Description:</label>
+        <textarea [(ngModel)]="event.desc" name="description" placeholder="Description" required></textarea>
+    </div>
+    <div>
+        <label>Information:</label>
+        <textarea [(ngModel)]="event.info" name="information" placeholder="Information" required></textarea>
+    </div>
+    <div>
+        <label>Company:</label>
+        <select [(ngModel)]="event.company" name="company" required>
+            <option *ngFor="let c of companies" [value]="c.id">{{ c.name }}</option>
+        </select>
+    </div>
+    <div>
+        <label>Category:</label>
+        <select [(ngModel)]="event.category" name="category" required>
+            <option *ngFor="let c of categories" [value]="c.id">{{ c.name }}</option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+</form>
